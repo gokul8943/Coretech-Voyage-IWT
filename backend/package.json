@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec ts-node-esm src/index.ts",
-    "build": "tsc",
-    "start": "node dist/index.js"
+    "build": "babel src -d dist",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "start": "nodemon src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -15,13 +16,13 @@
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "mongoose": "^8.19.3",
-    "nodemon": "^3.1.10",
-    "ts-node": "^10.9.2"
+    "mongoose": "^8.19.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.5",
-    "@types/node": "^24.10.0",
+    "@types/node": "^24.10.1",
+    "nodemon": "^3.1.11",
+    "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
 }
