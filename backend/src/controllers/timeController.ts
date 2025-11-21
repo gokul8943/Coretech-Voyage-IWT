@@ -45,6 +45,16 @@ export const endWorkTime = async (req: Request, res: Response) => {
     }
 }
 
+export const getWorkTimes = async (req: Request, res: Response) => {
+    try {
+        const workTimes = await TimeModel.find();
+        return res.status(200).json({ message: "working times fetch successfully", workTimes });
+    } catch (error) {
+        console.error("Internal server error:", error);
+        return res.status(500).json({ message: "Internal server error" });
+    }
+};
+
 export const getWorkTime = async (req: Request, res: Response) => {
     try {
         const userId = req.params.userId;
